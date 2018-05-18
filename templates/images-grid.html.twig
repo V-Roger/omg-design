@@ -1,18 +1,17 @@
 {% extends 'partials/base.html.twig' %}
-
 {% block content %}
-  {{ page.content }}
   <div class="grid-wrapper">
     <ul class="grid-container">
-    {% for image in page.media.images %}
+    {% for item in page.collection %}
       {% if loop.index % 3 == 0 %}
         <li class="item item--spacer"></li>
       {% endif %}
-      <li class="item item--{{ image.meta.size }}">
-        {{ image.html }}
-        <div class="image-info">
-          <h2>{{ image.meta.title }}</h2>
-          <p>{{ image.meta.description }}</p>
+      <li class="item {% if item.header.metadata.size %}item--{{ item.header.metadata.size }}{% endif %}">
+        {% set first_image = item.media.images|first %}
+        {{ first_image.html }}
+        <div class="item__info">
+          <h2>{{ item.header.metadata.title }}</h2>
+          <p>{{ item.header.metadata.description }}</p>
         </div>
       </li>
     {% endfor %}
