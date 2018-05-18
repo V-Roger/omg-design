@@ -1,0 +1,82 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box !important; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw; }
+
+.omg-header {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between; }
+  .omg-header .omg-logo {
+    height: 80px;
+    padding: 10px;
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center; }
+    .omg-header .omg-logo .omg-logo__img {
+      height: 100%;
+      margin-right: 15px; }
+  .omg-header .main-nav {
+    display: flex;
+    align-items: center;
+    flex: 1 1 60%; }
+    .omg-header .main-nav ul {
+      list-style-type: none; }
+
+.main-content {
+  display: flex;
+  position: relative;
+  top: 80px;
+  width: 100%; }
+
+/************* GRID */
+.grid-wrapper {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 0 10%; }
+
+.grid-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 20vw; }
+  .grid-container .item {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    align-items: center;
+    justify-content: center; }
+    .grid-container .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .grid-container .item.item--small {
+      grid-column: span 1;
+      grid-row: span 1; }
+    .grid-container .item.item--medium {
+      grid-column: span 1;
+      grid-row: span 2; }
+    .grid-container .item.item--large {
+      grid-column: span 2;
+      grid-row: span 2; }
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 20vw; } }
+
+/*# sourceMappingURL=omg.css.map */

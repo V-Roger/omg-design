@@ -1,0 +1,21 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  {{ page.content }}
+  <div class="grid-wrapper">
+    <ul class="grid-container">
+    {% for image in page.media.images %}
+      {% if loop.index % 3 == 0 %}
+        <li class="item item--spacer"></li>
+      {% endif %}
+      <li class="item item--{{ image.meta.size }}">
+        {{ image.html }}
+        <div class="image-info">
+          <h2>{{ image.meta.title }}</h2>
+          <p>{{ image.meta.description }}</p>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
