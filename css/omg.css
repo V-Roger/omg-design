@@ -61,6 +61,15 @@ body {
     padding: 15px;
     align-items: center;
     justify-content: center; }
+    .grid-container .item a {
+      width: 100%;
+      height: 100%;
+      color: #000; }
+      .grid-container .item a:hover .item__info, .grid-container .item a:focus .item__info {
+        min-height: 100%;
+        background: #FFFFFF; }
+        .grid-container .item a:hover .item__info h2, .grid-container .item a:hover .item__info p, .grid-container .item a:focus .item__info h2, .grid-container .item a:focus .item__info p {
+          text-decoration: underline; }
     .grid-container .item img {
       width: 100%;
       height: 100%;
@@ -70,8 +79,11 @@ body {
       bottom: 0;
       left: 0;
       width: 100%;
+      min-height: 80px;
       padding: 15px;
-      background: rgba(255, 255, 255, 0.95); }
+      background: rgba(255, 255, 255, 0.95);
+      transition: all 120ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      /* easeOutCubic */ }
       .grid-container .item .item__info h2, .grid-container .item .item__info p {
         padding: 0;
         margin: 0; }

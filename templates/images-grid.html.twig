@@ -7,12 +7,14 @@
         <li class="item item--spacer"></li>
       {% endif %}
       <li class="item {% if item.header.metadata.size %}item--{{ item.header.metadata.size }}{% endif %}">
-        {% set first_image = item.media.images|first %}
-        {{ first_image.html }}
-        <div class="item__info">
-          <h2>{{ item.header.metadata.title }}</h2>
-          <p>{{ item.header.metadata.description }}</p>
-        </div>
+        <a href="{{ item.url }}">
+          {% set first_image = item.media.images|first %}
+          {{ first_image.html }}
+          <div class="item__info">
+            <h2>{{ item.header.metadata.title }}</h2>
+            <p>{{ item.header.metadata.description }}</p>
+          </div>
+        </a>
       </li>
     {% endfor %}
     </ul>
