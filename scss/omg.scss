@@ -16,7 +16,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 80px;
+  height: 120px;
   width: 100%;
   align-content: center;
   align-items: center;
@@ -41,7 +41,29 @@ body {
     flex: 1 1 60%;
 
     & ul {
+      width: 100%;
       list-style-type: none;
+      display: flex;
+      flex-flow: row nowrap;
+      align-content: space-between;
+
+      & li {
+        flex-grow: 1;
+        display: flex;
+        align-content: center;
+
+        & a {
+          width: 100%;
+          text-align: center;
+          color: #000;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }
@@ -49,15 +71,29 @@ body {
 .main-content {
   display: flex;
   position: relative;
-  top: 80px;
+  top: 120px;
   width: 100%;
+}
+
+.main-wrapper {
+  width: 80%;
+  padding: 0 20%;
+}
+
+.content-wrapper {
+  width: 25%;
+  padding: 25px;
 }
 
 /************* GRID */
 .grid-wrapper {
   width: 100%;
-  background: #FFFFFF;
-  padding: 0 10%;
+  padding: 0 20%;
+}
+
+.content-wrapper + .grid-wrapper {
+  width: 75%;
+  padding: 0 5%;
 }
 
 .grid-container {

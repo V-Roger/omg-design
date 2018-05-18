@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+  <div class="content-wrapper">
+  {{ page.content }}
+  </div>
+  <div class="grid-wrapper">
+    <ul class="grid-container">
+    {% for image in page.media.images %}
+      {% if loop.index % 4 == 0 %}
+        <li class="item item--spacer"></li>
+      {% endif %}
+      <li class="item {% if loop.index % 3 == 0 %}item--large{% endif %}{% if loop.index % 2 == 0 %}item--medium{% endif %}{% if image.metadata.size %}item--{{ image.metadata.size }}{% endif %}">
+        {{ image.html }}
+        {% if image.metadata.title or image.metadata.description %}
+        <div class="item__info">
+          <h2>{{ image.metadata.title }}</h2>
+          <p>{{ image.metadata.description }}</p>
+        </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
