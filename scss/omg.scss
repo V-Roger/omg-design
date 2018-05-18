@@ -73,6 +73,7 @@ body {
   position: relative;
   top: 120px;
   width: 100%;
+  min-height: calc(100% - 440px);
 }
 
 .main-wrapper {
@@ -83,6 +84,43 @@ body {
 .content-wrapper {
   width: 25%;
   padding: 25px;
+}
+
+.omg-footer {
+  position: relative;
+  top: 240px;
+  height: 200px;
+  display: flex;
+  padding: 0 20%;
+  background: rgba(0, 0, 0, 0.05);
+  
+  & ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-between;
+
+    & li {
+      flex-grow: 1;
+      display: flex;
+      align-content: center;
+
+      & a {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        color: #000;
+        text-decoration: none;
+        text-transform: uppercase;
+        align-items: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 /************* GRID */
