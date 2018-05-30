@@ -55,7 +55,7 @@ body {
 
     & ul {
       width: 100%;
-      height: 60px;      
+      height: 60px;
       list-style-type: none;
       display: flex;
       flex-flow: row nowrap;
@@ -79,6 +79,18 @@ body {
           }
         }
       }
+    }
+  }
+
+  & .main-nav__toggle {
+    position: relative;
+    right: 25px;
+    display: none;
+    width: 60px;
+    height: 60px;
+
+    & img {
+      width: 100%;
     }
   }
 }
@@ -222,7 +234,7 @@ body {
           background: $green;
           color: #000000;
           height: 100%;
-          width: 100%;          
+          width: 100%;
         }
       }
     }
@@ -259,7 +271,7 @@ body {
           background: $yellow;
           color: #000000;
           height: 100%;
-          width: 100%;          
+          width: 100%;
         }
       }
     }
@@ -282,8 +294,68 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  html, body {height: 100%; }
+  body.overlay {
+    overflow: hidden;
+
+    & .omg-header {      
+      & .main-nav {
+        display: block;
+        position: fixed;
+        top: 120px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        background: #FFFFFF;
+        z-index: 5;
+
+        & ul {
+          height: 100%;
+          flex-flow: column;
+          align-items: flex-end;
+          padding-right: 35px;
+
+          & li {
+            flex: 0 1 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .omg-header {
+    & .main-nav {
+      display: none;
+    }
+
+    & .main-nav__toggle {
+      display: flex;
+    }
+  }
+
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 20vw;
+    grid-auto-rows: calc(50vw - 20px);
+  }
+
+  .grid-wrapper {
+    padding: 0 10px;
+  }
+
+  .main-content {
+    flex-flow: column;
+
+    & .grid-wrapper {
+      width: 100%;
+      padding: 0 10px;      
+    }
+
+    & .content-wrapper {
+      width: 100%;
+      padding: 0 30px;
+    }
   }
 }

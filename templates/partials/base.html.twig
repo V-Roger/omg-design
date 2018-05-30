@@ -61,6 +61,9 @@
     <nav class="main-nav">
       {% include 'partials/navigation.html.twig' %}
     </nav>
+    <button class="main-nav__toggle" onclick="document.querySelector('body').classList.toggle('overlay')">
+      <img src="{{ url('theme://images/icon__menu.svg') }}" alt="Afficher le menu" />
+    </button>
     {% endblock %}
   </header>
 {% endblock %}
