@@ -22,7 +22,32 @@
     {% block javascripts %}
     {% endblock %}
     {{ assets.js() }}
+    
+    <style>
+      @font-face {
+        font-family: "Arcon";
+        src: url({{ url("theme://fonts/Arcon-Regular.otf") }});
+        font-weight: normal;
+      }
 
+      @font-face {
+        font-family: "Moon";
+        src: url({{ url("theme://fonts/Moon2.0-Light.otf") }});
+        font-weight: light;
+      }
+
+      @font-face {
+        font-family: "Moon";
+        src: url({{ url("theme://fonts/Moon2.0-Regular.otf") }});
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family: "Moon";
+        src: url({{ url("theme://fonts/Moon2.0-Bold.otf") }});
+        font-weight: bold;
+      }
+    </style>
 {% endblock head%}
 </head>
 <body class="{{ page.header.body_classes }}">
