@@ -9,7 +9,7 @@
       {% if loop.index % 4 == 0 %}
         <li class="item item--spacer"></li>
       {% endif %}
-      <li class="item {% if loop.index % 3 == 0 %}item--large{% endif %}{% if loop.index % 2 == 0 %}item--medium{% endif %}{% if image.metadata.size %}item--{{ image.metadata.size }}{% endif %}">
+      <li class="item {% if image.metadata.gridSize %}item--{{ image.metadata.gridSize }}{% endif %}">
         {{ image.html }}
         {% if image.metadata.title or image.metadata.description %}
         <div class="item__info">
