@@ -124,8 +124,14 @@ body {
       padding: 15px 50px;
       font-family: Moon, Verdana, Arial, Helvetica, sans-serif;
       font-weight: bold;
+      transition: all 60ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      /* easeOutCubic */
       background-color: var(--accent-color);
       color: var(--background-color); }
+      .main-content form .pure-button.pure-button-primary:hover, .main-content form .pure-button.pure-button-primary:focus {
+        background-image: none;
+        background-color: transparent;
+        color: var(--accent-color); }
     .main-content form .form-field {
       display: flex;
       padding: 10px; }
