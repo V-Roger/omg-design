@@ -1,3 +1,6 @@
+:root {
+  --accent-color: $red; }
+
 *,
 *:before,
 *:after {
@@ -67,7 +70,7 @@ body {
           /* easeOutCubic */ }
           .omg-header .main-nav ul li a:hover {
             text-decoration: none;
-            color: #FF1E38;
+            color: var(--accent-color);
             left: 8px; }
   .omg-header .main-nav__toggle {
     position: relative;
@@ -102,7 +105,7 @@ body {
   height: 200px;
   display: flex;
   padding: 0 50px;
-  background: rgba(0, 0, 0, 0.05); }
+  background: var(--accent-color); }
   .omg-footer ul {
     width: 100%;
     list-style-type: none;
@@ -117,18 +120,29 @@ body {
         padding-right: 0; }
       .omg-footer ul li a {
         width: 100%;
+        min-width: 80px;
         display: flex;
-        text-align: center;
+        justify-content: center;
         color: #000;
         text-decoration: none;
         text-transform: uppercase;
         align-items: center; }
-        .omg-footer ul li a img {
-          width: 60px; }
-          .omg-footer ul li a img.ig-icon {
-            width: 80px; }
-        .omg-footer ul li a:hover {
+        .omg-footer ul li a svg {
+          width: 60px;
+          height: 60px;
+          transition: all 120ms cubic-bezier(0.215, 0.61, 0.355, 1);
+          /* easeOutCubic */ }
+          .omg-footer ul li a svg.ig-icon {
+            width: 70px;
+            height: 70px; }
+        .omg-footer ul li a:hover, .omg-footer ul li a:focus {
           text-decoration: none; }
+          .omg-footer ul li a:hover svg, .omg-footer ul li a:focus svg {
+            width: 70px;
+            height: 70px; }
+            .omg-footer ul li a:hover svg.ig-icon, .omg-footer ul li a:focus svg.ig-icon {
+              width: 80px;
+              height: 80px; }
 
 /************* GRID */
 .grid-wrapper {

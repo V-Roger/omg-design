@@ -2,6 +2,10 @@ $yellow: #FFE500;
 $red: #FF1E38;
 $green: #75FB9A;
 
+:root {
+  --accent-color: $red;
+}
+
 *,
 *:before,
 *:after {
@@ -82,7 +86,7 @@ body {
           
           &:hover {
             text-decoration: none;
-            color: $red;
+            color: var(--accent-color);
             left: 8px;
           }
         }
@@ -130,7 +134,7 @@ body {
   height: 200px;
   display: flex;
   padding: 0 50px;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--accent-color);
 
   & ul {
     width: 100%;
@@ -150,23 +154,38 @@ body {
 
       & a {
         width: 100%;
+        min-width: 80px;      
         display: flex;
-        text-align: center;
+        justify-content: center;
         color: #000;
         text-decoration: none;
         text-transform: uppercase;
         align-items: center;
 
-        & img {
+        & svg {
           width: 60px;
-        
+          height: 60px;
+          transition: all 120ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
           &.ig-icon {
-            width: 80px;
+            width: 70px;
+            height: 70px;
           }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: none;
+        
+          & svg {
+            width: 70px;
+            height: 70px;
+
+            &.ig-icon {
+              width: 80px;
+              height: 80px;
+            }
+          }
         }
       }
     }
