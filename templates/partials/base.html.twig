@@ -82,7 +82,7 @@
 {% endblock %}
 
 {% block body %}
-  <section class="main-content">
+  <section class="main-content {{ page.header.classes }}">
     {% if form and form.message %}
       <div class="alert" onclick="document.querySelector('.alert').classList.toggle('hidden')">{{ form.message }}</div>
     {% endif %}
