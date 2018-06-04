@@ -1,5 +1,9 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set accent_color = random(['#FFE500', '#FF1E38', '#75FB9A']) %}
+{% set colorName = 'green' %}
+{% if accent_color != '#75FB9A' %}
+  {% set colorName = accent_color == '#FF1E38' ? 'red' : 'yellow' %}
+{% endif %}
 {% set bg_color = accent_color == '#FF1E38' ? '#FFFFFF' : '#000000' %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
@@ -13,11 +17,12 @@
     <meta name="theme-color" content="{{ accent_color }}">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo-green.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url('theme://images/omg-design__logo--' ~ colorName ~ '.svg') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 
     {% block stylesheets %}
-        {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/base-min.css', 100) %}
+        {# {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/base-min.css', 100) %} #}
         {% do assets.addCss('theme://css/omg.css', 98) %}
     {% endblock %}
     {{ assets.css() }}
@@ -29,6 +34,7 @@
     <style>
       :root {
         --accent-color: {{ accent_color }};
+        --background-color: {{ bg_color }};
       }
 
       @font-face {
@@ -62,7 +68,7 @@
 {% block header %}
   <header class="omg-header">
     <a class="omg-logo" href="{{ base_url == '' ? '/' : base_url }}">
-      <img src="{{ url("theme://images/logo-green.png") }}" class="omg-logo__img" alt="OMG Design"/>
+      <img src="{{ url('theme://images/omg-design__logo--' ~ colorName ~ '.svg') }}" class="omg-logo__img" alt="OMG Design"/>
     </a>
     {% block header_navigation %}
     <nav class="main-nav">

@@ -1,5 +1,6 @@
 :root {
-  --accent-color: $red; }
+  --accent-color: $red;
+  --background-color: #FFFFFF; }
 
 *,
 *:before,
@@ -89,7 +90,49 @@ body {
   position: relative;
   top: 200px;
   width: 100%;
-  min-height: calc(100% - 440px); }
+  min-height: calc(100% - 440px);
+  padding-left: 25%;
+  flex-flow: column; }
+  .main-content .notices {
+    width: 75%; }
+  .main-content form {
+    width: 75%; }
+    .main-content form .pure-button.pure-button-primary {
+      padding: 15px 50px;
+      font-family: Moon, Verdana, Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      background-color: var(--accent-color);
+      color: var(--background-color); }
+    .main-content form .form-field {
+      display: flex;
+      padding: 10px; }
+      .main-content form .form-field .form-label {
+        display: flex;
+        flex: 1 1 20%;
+        align-content: center;
+        justify-content: flex-end;
+        padding-right: 25px; }
+      .main-content form .form-field .form-data {
+        flex: 1 1 80%; }
+      .main-content form .form-field input, .main-content form .form-field textarea {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 15px;
+        border-radius: 2px;
+        background: #eee;
+        border-color: transparent;
+        box-shadow: none; }
+        .main-content form .form-field input:focus, .main-content form .form-field textarea:focus {
+          border-color: var(--accent-color); }
+          .main-content form .form-field input:focus:invalid, .main-content form .form-field textarea:focus:invalid {
+            border-color: #FF1E38; }
+    .main-content form .buttons {
+      display: flex;
+      flex: 1 1 20%;
+      align-content: center;
+      justify-content: flex-end;
+      padding-top: 25px;
+      padding-right: 10px; }
 
 .main-wrapper {
   width: 80%;
